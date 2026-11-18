@@ -1,0 +1,459 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios &amp; Tiempos — TurnosApp</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="25f44ef5a1ddaf5f===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#442299',
+        'on-primary': '#FFFFFF',
+        'primary-container': '#EFEBFF',
+        'on-primary-container': '#2B106B',
+        'secondary': '#6A55B2',
+        'on-secondary': '#FFFFFF',
+        'secondary-container': '#F5F2FC',
+        'on-secondary-container': '#2B106B',
+        'accent': '#C59B27',
+        'brand-roble': '#13101C',
+        'background': '#F7F6FA',
+        'on-background': '#181721',
+        'surface': '#FFFFFF',
+        'on-surface': '#181721',
+        'surface-variant': '#EFECEF',
+        'on-surface-variant': '#524E5E',
+        'surface-container-low': '#FCFBFE',
+        'surface-container': '#F2EFF7',
+        'surface-container-high': '#EAE5F2',
+        'outline': '#D2CDDC',
+        'outline-variant': '#E2DEEB',
+        'success': '#0D6E3F',
+        'on-success': '#FFFFFF',
+        'success-container': '#D4F4E2',
+        'on-success-container': '#064324',
+        'error': '#B32626',
+        'on-error': '#FFFFFF',
+        'error-container': '#FDE8E8',
+        'on-error-container': '#681212',
+        'warning': '#965306',
+        'on-warning': '#FFFFFF',
+        'warning-container': '#FEF0D6',
+        'on-warning-container': '#5B3002',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '18px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '28px',
+      },
+      fontFamily: {
+        'display': ['"Cormorant Garamond"', 'sans-serif'],
+        'headline': ['"Cormorant Garamond"', 'sans-serif'],
+        'title': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'body': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'label': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['42px', { lineHeight: '48px', letterSpacing: '-0.5px', fontWeight: '600' }],
+        'display-lg-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.3px', fontWeight: '600' }],
+        'headline-xl': ['34px', { lineHeight: '40px', letterSpacing: '-0.4px', fontWeight: '600' }],
+        'headline-xl-mobile': ['26px', { lineHeight: '32px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'headline-lg': ['26px', { lineHeight: '32px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'headline-lg-mobile': ['22px', { lineHeight: '28px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'headline-md': ['18px', { lineHeight: '24px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'title-lg': ['16px', { lineHeight: '22px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'title-md': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['13px', { lineHeight: '18px', letterSpacing: '0.3px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.2px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '160ms',
+        'surface-enter': '260ms',
+        'surface-exit': '160ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-enter': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'surface-exit': 'cubic-bezier(0.4, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1 !important;
+      box-sizing: content-box;
+      overflow: hidden;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen">
+  <div class="flex min-h-screen">
+    <!-- Sidebar Navigation (Exact parity with AdminDashboard) -->
+    <aside class="w-64 bg-brand-roble text-white flex flex-col justify-between p-5 sticky top-0 h-screen shrink-0 border-r border-outline-variant">
+      <div class="flex flex-col gap-8">
+        <!-- Brand & Atelier mark -->
+        <div class="flex items-center gap-3 px-1">
+          <div class="w-9 h-9 rounded-md bg-primary text-on-primary flex items-center justify-center font-display font-bold text-headline-lg shadow-sm">
+            T
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display font-semibold text-headline-lg tracking-wide text-white leading-none" data-design-text-token="headline-lg">Studio Bellas</span>
+            <span class="font-label text-label-sm text-outline-variant flex items-center gap-1.5 mt-1" data-design-text-token="label-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span> Concierge Pro • Roble
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex flex-col gap-1.5">
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">dashboard</span>
+            <span data-design-text-token="label-lg">Vista General</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">calendar_today</span>
+            <span data-design-text-token="label-lg">Agenda Selecta</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">person_search</span>
+            <span data-design-text-token="label-lg">Clientes VIP</span>
+          </a>
+          <!-- Active tab: Servicios -->
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md bg-primary-container/20 text-white font-label text-label-lg border-l-2 border-accent transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg text-accent">spa</span>
+            <span data-design-text-token="label-lg">Servicios</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">badge</span>
+            <span data-design-text-token="label-lg">Especialistas</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">send</span>
+            <span data-design-text-token="label-lg">Recordatorios</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">finance_chip</span>
+            <span data-design-text-token="label-lg">Rendimiento</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Public Booking Link CTA & User Profile -->
+      <div class="flex flex-col gap-4 pt-5 border-t border-outline-variant">
+        <div class="bg-primary/20 p-3.5 rounded-md border border-primary/40 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <span class="font-label text-label-sm text-outline" data-design-text-token="label-sm">Enlace del Negocio</span>
+            <span class="material-symbols-outlined text-body-sm text-accent">diamond</span>
+          </div>
+          <div class="text-body-sm text-white font-medium truncate" data-design-text-token="body-sm">
+            turnosapp.com/studiobellas
+          </div>
+          <button type="button" class="w-full text-center py-1.5 bg-surface text-primary rounded-sm text-label-sm font-semibold hover:bg-accent hover:text-brand-roble transition-all duration-state-change">
+            Copiar enlace
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between px-1">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary font-display font-semibold flex items-center justify-center text-label-md">
+              CL
+            </div>
+            <div class="flex flex-col">
+              <span class="font-headline text-label-md text-white" data-design-text-token="label-md">Camila López</span>
+              <span class="font-body text-body-sm text-outline" data-design-text-token="body-sm">Directora</span>
+            </div>
+          </div>
+          <button type="button" class="text-outline hover:text-white" aria-label="Cerrar sesión">
+            <span class="material-symbols-outlined text-title-lg">logout</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col overflow-y-auto min-h-screen">
+      <!-- Header -->
+      <header class="bg-surface border-b border-outline-variant px-8 py-5 flex items-center justify-between sticky top-0 z-10">
+        <div>
+          <span class="font-label text-label-sm text-primary uppercase tracking-widest block mb-0.5 font-semibold">Configuración Operativa</span>
+          <h1 class="font-display text-display-lg text-on-surface italic" data-design-text-token="display-lg">Catálogo de Servicios &amp; Pausas</h1>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button type="button" class="inline-flex items-center gap-2 px-4 py-2 border border-outline bg-surface rounded-md font-label text-label-lg hover:bg-surface-container transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg text-on-surface-variant">timer</span>
+            <span data-design-text-token="label-lg">Tiempos de limpieza</span>
+          </button>
+
+          <button type="button" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-md font-label text-label-lg shadow-sm hover:opacity-95 active:scale-95 transition-all duration-state-change whitespace-nowrap">
+            <span class="material-symbols-outlined text-title-lg text-white">add</span>
+            <span data-design-text-token="label-lg">Crear nuevo servicio</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="p-8 flex flex-col gap-8">
+        <!-- Practical Notice Banner: Human touch about booking rules -->
+        <div class="bg-surface-container-low border border-outline-variant p-4 rounded-lg flex items-start justify-between gap-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-title-md">tips_and_updates</span>
+            </div>
+            <div>
+              <h2 class="font-body text-title-md font-semibold text-on-surface" data-design-text-token="title-md">Regla de buffers automáticos entre clientes</h2>
+              <p class="font-body text-body-sm text-on-surface-variant mt-0.5" data-design-text-token="body-sm">
+                Cada servicio incluye un tiempo de gracia configurable (10 a 15 min) para esterilizar herramientas, ventilar el box y evitar que el próximo cliente espere de pie.
+              </p>
+            </div>
+          </div>
+          <span class="text-label-sm font-semibold bg-success-container text-on-success-container px-2.5 py-1 rounded-full shrink-0">
+            Regla activa: +10 min
+          </span>
+        </div>
+
+        <!-- Main Layout: Services Table + Break Config -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Left 2 Cols: Services Table with realistic operational attributes -->
+          <div class="lg:col-span-2 bg-surface rounded-lg border border-outline-variant shadow-sm flex flex-col">
+            <div class="p-6 border-b border-outline-variant flex items-center justify-between">
+              <div>
+                <h3 class="font-display text-headline-lg font-semibold text-on-surface" data-design-text-token="headline-lg">Servicios Habilitados</h3>
+                <p class="font-body text-body-sm text-on-surface-variant mt-0.5" data-design-text-token="body-sm">
+                  Modifica duración neta, precio visible para el cliente y especialistas asignados.
+                </p>
+              </div>
+              <span class="text-label-sm text-on-surface-variant">5 activos en web</span>
+            </div>
+
+            <!-- Table -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-outline-variant bg-surface-container-low text-label-sm font-semibold text-on-surface-variant">
+                    <th class="py-3.5 px-6">Servicio</th>
+                    <th class="py-3.5 px-4">Duración</th>
+                    <th class="py-3.5 px-4">Tiempo extra</th>
+                    <th class="py-3.5 px-4">Precio</th>
+                    <th class="py-3.5 px-4">Especialistas</th>
+                    <th class="py-3.5 px-6 text-right">Acción</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant text-body-md text-on-surface">
+                  <!-- Row 1 -->
+                  <tr class="hover:bg-surface-container-low/60 transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="font-semibold text-on-surface">Corte, Brushing &amp; Nutrición</div>
+                      <div class="text-body-sm text-on-surface-variant">Lavado con masaje + peinado</div>
+                    </td>
+                    <td class="py-4 px-4 font-medium tabular-nums">45 min</td>
+                    <td class="py-4 px-4">
+                      <span class="inline-flex items-center gap-1 text-label-sm bg-surface-container px-2 py-0.5 rounded font-medium text-primary">
+                        +15 min
+                      </span>
+                    </td>
+                    <td class="py-4 px-4 font-bold tabular-nums">$22.000</td>
+                    <td class="py-4 px-4">
+                      <div class="flex items-center -space-x-1.5">
+                        <span class="w-6 h-6 rounded-full bg-brand-roble text-white text-[10px] font-bold flex items-center justify-center border border-surface" title="Sofía Martínez">SM</span>
+                        <span class="w-6 h-6 rounded-full bg-brand-roble text-white text-[10px] font-bold flex items-center justify-center border border-surface" title="Martín Cabrera">MC</span>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <button type="button" class="text-label-md text-primary font-semibold hover:underline">Editar</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2 -->
+                  <tr class="hover:bg-surface-container-low/60 transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="font-semibold text-on-surface">Barba Spa &amp; Navaja Tradicional</div>
+                      <div class="text-body-sm text-on-surface-variant">Toalla caliente y aceites botánicos</div>
+                    </td>
+                    <td class="py-4 px-4 font-medium tabular-nums">30 min</td>
+                    <td class="py-4 px-4">
+                      <span class="inline-flex items-center gap-1 text-label-sm bg-surface-container px-2 py-0.5 rounded font-medium text-primary">
+                        +10 min
+                      </span>
+                    </td>
+                    <td class="py-4 px-4 font-bold tabular-nums">$14.500</td>
+                    <td class="py-4 px-4">
+                      <div class="flex items-center">
+                        <span class="w-6 h-6 rounded-full bg-secondary text-white text-[10px] font-bold flex items-center justify-center border border-surface" title="Martín Cabrera">MC</span>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <button type="button" class="text-label-md text-primary font-semibold hover:underline">Editar</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3 -->
+                  <tr class="hover:bg-surface-container-low/60 transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="font-semibold text-on-surface">Lifting de Pestañas + Cejas HD</div>
+                      <div class="text-body-sm text-on-surface-variant">Tratamiento hipoalergénico</div>
+                    </td>
+                    <td class="py-4 px-4 font-medium tabular-nums">60 min</td>
+                    <td class="py-4 px-4">
+                      <span class="inline-flex items-center gap-1 text-label-sm bg-surface-container px-2 py-0.5 rounded font-medium text-primary">
+                        +10 min
+                      </span>
+                    </td>
+                    <td class="py-4 px-4 font-bold tabular-nums">$28.000</td>
+                    <td class="py-4 px-4">
+                      <div class="flex items-center">
+                        <span class="w-6 h-6 rounded-full bg-brand-roble text-white text-[10px] font-bold flex items-center justify-center border border-surface" title="Ana Romero">AR</span>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <button type="button" class="text-label-md text-primary font-semibold hover:underline">Editar</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4 -->
+                  <tr class="hover:bg-surface-container-low/60 transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="font-semibold text-on-surface">Corte Degradé &amp; Texturizado</div>
+                      <div class="text-body-sm text-on-surface-variant">Técnica a tijera y máquina</div>
+                    </td>
+                    <td class="py-4 px-4 font-medium tabular-nums">45 min</td>
+                    <td class="py-4 px-4">
+                      <span class="inline-flex items-center gap-1 text-label-sm bg-surface-container px-2 py-0.5 rounded font-medium text-primary">
+                        +10 min
+                      </span>
+                    </td>
+                    <td class="py-4 px-4 font-bold tabular-nums">$16.000</td>
+                    <td class="py-4 px-4">
+                      <div class="flex items-center">
+                        <span class="w-6 h-6 rounded-full bg-secondary text-white text-[10px] font-bold flex items-center justify-center border border-surface" title="Martín Cabrera">MC</span>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <button type="button" class="text-label-md text-primary font-semibold hover:underline">Editar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="p-4 border-t border-outline-variant bg-surface-container-low flex items-center justify-between text-body-sm text-on-surface-variant">
+              <span>El cliente solo ve la duración de la sesión, no el tiempo de descanso posterior.</span>
+              <button type="button" class="text-primary font-semibold hover:underline">Descargar lista PDF</button>
+            </div>
+          </div>
+
+          <!-- Right Col: Configuración de Descansos & Bloqueos -->
+          <div class="flex flex-col gap-6">
+            <!-- Bloqueo de Descanso / Almuerzo -->
+            <section class="bg-surface rounded-lg border border-outline-variant p-6 shadow-sm flex flex-col gap-4">
+              <div class="flex items-center justify-between border-b border-outline-variant pb-3">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-title-lg text-primary">restaurant</span>
+                  <h3 class="font-display text-headline-md font-semibold text-on-surface" data-design-text-token="headline-md">Horario de Almuerzo</h3>
+                </div>
+                <span class="text-label-sm bg-success-container text-on-success-container px-2 py-0.5 rounded font-semibold">Bloqueado</span>
+              </div>
+              <p class="font-body text-body-sm text-on-surface-variant" data-design-text-token="body-sm">
+                Franja automática donde la web pública no muestra turnos disponibles para nadie del equipo.
+              </p>
+
+              <div class="flex items-center gap-3 pt-2">
+                <div class="flex-1">
+                  <label class="text-label-sm font-semibold text-on-surface-variant block mb-1">Inicio pausa</label>
+                  <input type="text" value="13:00" class="w-full px-3 py-2 bg-surface-container border border-outline rounded-md text-on-surface font-semibold tabular-nums">
+                </div>
+                <span class="mt-5 text-on-surface-variant font-medium">a</span>
+                <div class="flex-1">
+                  <label class="text-label-sm font-semibold text-on-surface-variant block mb-1">Fin pausa</label>
+                  <input type="text" value="14:00" class="w-full px-3 py-2 bg-surface-container border border-outline rounded-md text-on-surface font-semibold tabular-nums">
+                </div>
+              </div>
+
+              <div class="pt-2">
+                <label class="text-label-sm font-semibold text-on-surface-variant block mb-1.5">Días aplicados</label>
+                <div class="flex items-center gap-1.5">
+                  <span class="w-8 h-8 rounded bg-primary text-white text-label-sm font-bold flex items-center justify-center">L</span>
+                  <span class="w-8 h-8 rounded bg-primary text-white text-label-sm font-bold flex items-center justify-center">M</span>
+                  <span class="w-8 h-8 rounded bg-primary text-white text-label-sm font-bold flex items-center justify-center">M</span>
+                  <span class="w-8 h-8 rounded bg-primary text-white text-label-sm font-bold flex items-center justify-center">J</span>
+                  <span class="w-8 h-8 rounded bg-primary text-white text-label-sm font-bold flex items-center justify-center">V</span>
+                  <span class="w-8 h-8 rounded bg-surface-container text-on-surface-variant text-label-sm font-bold flex items-center justify-center">S</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Políticas de Reserva & Cancelación -->
+            <section class="bg-surface rounded-lg border border-outline-variant p-6 shadow-sm flex flex-col gap-4">
+              <div class="flex items-center justify-between border-b border-outline-variant pb-3">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-title-lg text-primary">policy</span>
+                  <h3 class="font-display text-headline-lg font-semibold text-on-surface" data-design-text-token="headline-lg">Políticas para Clientes</h3>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-3 text-body-sm">
+                <div>
+                  <label class="text-label-sm font-semibold text-on-surface block mb-1">Anticipación mínima para reservar</label>
+                  <select class="w-full px-3 py-2 bg-surface border border-outline rounded-md text-on-surface text-body-sm">
+                    <option selected>2 horas antes del turno</option>
+                    <option>4 horas antes</option>
+                    <option>24 horas antes</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="text-label-sm font-semibold text-on-surface block mb-1">Límite para cancelar sin penalización</label>
+                  <select class="w-full px-3 py-2 bg-surface border border-outline rounded-md text-on-surface text-body-sm">
+                    <option selected>Hasta 4 horas antes</option>
+                    <option>Hasta 12 horas antes</option>
+                    <option>Hasta 24 horas antes</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="button" class="w-full py-2.5 bg-primary text-white font-label text-label-md font-semibold rounded-md shadow-xs hover:opacity-95 transition-all mt-1">
+                Guardar políticas de reserva
+              </button>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+</body></html>

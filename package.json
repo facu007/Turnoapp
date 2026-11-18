@@ -1,0 +1,10 @@
+{
+  "name": "turnosapp-saas-platform",
+  "version": "1.0.0",
+  "description": "TurnosApp SaaS Platform — Studio Bellas (Roble Studio)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}

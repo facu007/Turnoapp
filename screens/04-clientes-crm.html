@@ -1,0 +1,520 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes &amp; CRM — TurnosApp</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="25f44ef5a1ddaf5f===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#442299',
+        'on-primary': '#FFFFFF',
+        'primary-container': '#EFEBFF',
+        'on-primary-container': '#2B106B',
+        'secondary': '#6A55B2',
+        'on-secondary': '#FFFFFF',
+        'secondary-container': '#F5F2FC',
+        'on-secondary-container': '#2B106B',
+        'accent': '#C59B27',
+        'brand-roble': '#13101C',
+        'background': '#F7F6FA',
+        'on-background': '#181721',
+        'surface': '#FFFFFF',
+        'on-surface': '#181721',
+        'surface-variant': '#EFECEF',
+        'on-surface-variant': '#524E5E',
+        'surface-container-low': '#FCFBFE',
+        'surface-container': '#F2EFF7',
+        'surface-container-high': '#EAE5F2',
+        'outline': '#D2CDDC',
+        'outline-variant': '#E2DEEB',
+        'success': '#0D6E3F',
+        'on-success': '#FFFFFF',
+        'success-container': '#D4F4E2',
+        'on-success-container': '#064324',
+        'error': '#B32626',
+        'on-error': '#FFFFFF',
+        'error-container': '#FDE8E8',
+        'on-error-container': '#681212',
+        'warning': '#965306',
+        'on-warning': '#FFFFFF',
+        'warning-container': '#FEF0D6',
+        'on-warning-container': '#5B3002',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '18px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '28px',
+      },
+      fontFamily: {
+        'display': ['"Cormorant Garamond"', 'sans-serif'],
+        'headline': ['"Cormorant Garamond"', 'sans-serif'],
+        'title': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'body': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'label': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['42px', { lineHeight: '48px', letterSpacing: '-0.5px', fontWeight: '600' }],
+        'display-lg-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.3px', fontWeight: '600' }],
+        'headline-xl': ['34px', { lineHeight: '40px', letterSpacing: '-0.4px', fontWeight: '600' }],
+        'headline-xl-mobile': ['26px', { lineHeight: '32px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'headline-lg': ['26px', { lineHeight: '32px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'headline-lg-mobile': ['22px', { lineHeight: '28px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'headline-md': ['18px', { lineHeight: '24px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'title-lg': ['16px', { lineHeight: '22px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'title-md': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['13px', { lineHeight: '18px', letterSpacing: '0.3px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.2px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '160ms',
+        'surface-enter': '260ms',
+        'surface-exit': '160ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-enter': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'surface-exit': 'cubic-bezier(0.4, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1 !important;
+      box-sizing: content-box;
+      overflow: hidden;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen">
+  <div class="flex min-h-screen">
+    <!-- Sidebar Navigation (Consistent Atelier Shell) -->
+    <aside class="w-64 bg-brand-roble text-white flex flex-col justify-between p-5 sticky top-0 h-screen shrink-0 border-r border-outline-variant">
+      <div class="flex flex-col gap-8">
+        <!-- Brand & Atelier mark -->
+        <div class="flex items-center gap-3 px-1">
+          <div class="w-9 h-9 rounded-md bg-primary text-on-primary flex items-center justify-center font-display font-bold text-headline-lg shadow-sm">
+            T
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display font-semibold text-headline-lg tracking-wide text-white leading-none" data-design-text-token="headline-lg">Studio Bellas</span>
+            <span class="font-label text-label-sm text-outline-variant flex items-center gap-1.5 mt-1" data-design-text-token="label-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span> Concierge Pro • Roble
+            </span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex flex-col gap-1.5">
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">dashboard</span>
+            <span data-design-text-token="label-lg">Vista General</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">calendar_today</span>
+            <span data-design-text-token="label-lg">Agenda Selecta</span>
+          </a>
+          <!-- Active Tab: Clientes VIP -->
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md bg-primary-container/20 text-white font-label text-label-lg border-l-2 border-accent transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg text-accent">person_search</span>
+            <span data-design-text-token="label-lg">Clientes VIP</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">spa</span>
+            <span data-design-text-token="label-lg">Servicios</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">badge</span>
+            <span data-design-text-token="label-lg">Especialistas</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">send</span>
+            <span data-design-text-token="label-lg">Recordatorios</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 rounded-md text-outline hover:bg-surface-container/20 hover:text-white font-label text-label-lg transition-all duration-state-change">
+            <span class="material-symbols-outlined text-title-lg">finance_chip</span>
+            <span data-design-text-token="label-lg">Rendimiento</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Public Booking Link CTA & User Profile -->
+      <div class="flex flex-col gap-4 pt-5 border-t border-outline-variant">
+        <div class="bg-primary/20 p-3.5 rounded-md border border-primary/40 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <span class="font-label text-label-sm text-outline" data-design-text-token="label-sm">Enlace del Negocio</span>
+            <span class="material-symbols-outlined text-body-sm text-accent">diamond</span>
+          </div>
+          <div class="text-body-sm text-white font-medium truncate" data-design-text-token="body-sm">
+            turnosapp.com/studiobellas
+          </div>
+          <button type="button" class="w-full text-center py-1.5 bg-surface text-primary rounded-sm text-label-sm font-semibold hover:bg-accent hover:text-brand-roble transition-all duration-state-change">
+            Copiar enlace
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between px-1">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary font-display font-semibold flex items-center justify-center text-label-md">
+              CL
+            </div>
+            <div class="flex flex-col">
+              <span class="font-headline text-label-md text-white" data-design-text-token="label-md">Camila López</span>
+              <span class="font-body text-body-sm text-outline" data-design-text-token="body-sm">Directora</span>
+            </div>
+          </div>
+          <button type="button" class="text-outline hover:text-white" aria-label="Cerrar sesión">
+            <span class="material-symbols-outlined text-title-lg">logout</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col overflow-y-auto min-h-screen">
+      <!-- Header -->
+      <header class="bg-surface border-b border-outline-variant px-8 py-5 flex items-center justify-between sticky top-0 z-10">
+        <div>
+          <span class="font-label text-label-sm text-primary uppercase tracking-widest block mb-0.5 font-semibold">Directorio de Confianza</span>
+          <h1 class="font-display text-display-lg text-on-surface italic" data-design-text-token="display-lg">Fichas de Clientes &amp; Preferencias</h1>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-title-md">search</span>
+            <input type="text" placeholder="Buscar por nombre o celular..." class="w-72 pl-9 pr-3.5 py-2 bg-surface border border-outline rounded-md text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:border-primary focus:ring-1 focus:ring-primary">
+          </div>
+
+          <button type="button" class="inline-flex items-center gap-2 px-5 py-2 bg-primary text-on-primary rounded-md font-label text-label-lg shadow-sm hover:opacity-95 active:scale-95 transition-all duration-state-change whitespace-nowrap">
+            <span class="material-symbols-outlined text-title-lg text-white">person_add</span>
+            <span data-design-text-token="label-lg">Registrar cliente</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="p-8 flex flex-col gap-8">
+        <!-- CRM Quick Metrics -->
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <article class="bg-surface p-5 rounded-lg border border-outline-variant shadow-sm flex items-center justify-between">
+            <div>
+              <span class="font-label text-label-sm text-on-surface-variant uppercase tracking-wider block mb-1">Base Total</span>
+              <h2 class="font-display text-headline-xl text-on-surface tabular-nums" data-design-text-token="headline-xl">428 socios</h2>
+              <p class="text-body-sm text-on-surface-variant mt-0.5">Con ficha clínica / preferencias</p>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+              <span class="material-symbols-outlined text-headline-md">groups</span>
+            </div>
+          </article>
+
+          <article class="bg-surface p-5 rounded-lg border border-outline-variant shadow-sm flex items-center justify-between">
+            <div>
+              <span class="font-label text-label-sm text-on-surface-variant uppercase tracking-wider block mb-1">Recurrentes</span>
+              <h2 class="font-display text-headline-xl text-on-surface tabular-nums" data-design-text-token="headline-xl">76.4%</h2>
+              <p class="text-body-sm text-success font-medium mt-0.5">Vuelven cada 20 a 30 días</p>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-success-container text-on-success-container flex items-center justify-center">
+              <span class="material-symbols-outlined text-headline-md">repeat</span>
+            </div>
+          </article>
+
+          <article class="bg-surface p-5 rounded-lg border border-outline-variant shadow-sm flex items-center justify-between">
+            <div>
+              <span class="font-label text-label-sm text-on-surface-variant uppercase tracking-wider block mb-1">Sin Ausencias</span>
+              <h2 class="font-display text-headline-xl text-on-surface tabular-nums" data-design-text-token="headline-xl">99.1%</h2>
+              <p class="text-body-sm text-on-surface-variant mt-0.5">Gracias al recordatorio WhatsApp</p>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+              <span class="material-symbols-outlined text-headline-md">verified_user</span>
+            </div>
+          </article>
+        </section>
+
+        <!-- Main CRM Layout: Client List + Selected Client Dossier -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Left 2 Cols: Client Directory Table -->
+          <div class="lg:col-span-2 bg-surface rounded-lg border border-outline-variant shadow-sm flex flex-col">
+            <div class="p-6 border-b border-outline-variant flex items-center justify-between flex-wrap gap-4">
+              <div>
+                <h3 class="font-display text-headline-lg font-semibold text-on-surface" data-design-text-token="headline-lg">Directorio Activo</h3>
+                <p class="font-body text-body-sm text-on-surface-variant mt-0.5" data-design-text-token="body-sm">
+                  Historial de visitas, servicios más pedidos y observaciones confidenciales del personal.
+                </p>
+              </div>
+
+              <!-- Filter tabs -->
+              <div class="flex items-center gap-1 bg-surface-container p-1 rounded-md shrink-0">
+                <button type="button" class="px-3.5 py-1.5 bg-surface rounded text-label-sm font-semibold text-primary shadow-xs">Todos (428)</button>
+                <button type="button" class="px-3.5 py-1.5 rounded text-label-sm text-on-surface-variant hover:text-on-surface">Frecuentes</button>
+                <button type="button" class="px-3.5 py-1.5 rounded text-label-sm text-on-surface-variant hover:text-on-surface">Nuevos</button>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-outline-variant bg-surface-container-low text-label-sm font-semibold text-on-surface-variant">
+                    <th class="py-3.5 px-6">Cliente</th>
+                    <th class="py-3.5 px-4">Teléfono (WhatsApp)</th>
+                    <th class="py-3.5 px-4">Visitas</th>
+                    <th class="py-3.5 px-4">Última visita</th>
+                    <th class="py-3.5 px-4">Servicio habitual</th>
+                    <th class="py-3.5 px-6 text-right">Ficha</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant text-body-md text-on-surface">
+                  <!-- Row 1 (Selected) -->
+                  <tr class="bg-primary-container/20 border-l-4 border-primary transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-primary text-white font-display font-semibold flex items-center justify-center text-label-md shrink-0">
+                          LF
+                        </div>
+                        <div>
+                          <div class="font-semibold text-on-surface">Luciana Ferrero</div>
+                          <div class="text-body-sm text-on-surface-variant">luciana.ferrero@gmail.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4 font-medium text-body-sm tabular-nums">
+                      <div class="flex items-center gap-1.5 text-primary">
+                        <span class="material-symbols-outlined text-body-sm">chat</span>
+                        <span>+54 9 11 4521-8899</span>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4 font-bold tabular-nums">14 visitas</td>
+                    <td class="py-4 px-4 text-body-sm text-on-surface-variant">Hoy 09:30</td>
+                    <td class="py-4 px-4">
+                      <span class="inline-flex items-center text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface font-medium">
+                        Nutrición &amp; Brushing
+                      </span>
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <span class="text-label-sm font-bold text-primary">Viendo</span>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2 -->
+                  <tr class="hover:bg-surface-container-low/60 transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-secondary text-white font-display font-semibold flex items-center justify-center text-label-md shrink-0">
+                          MR
+                        </div>
+                        <div>
+                          <div class="font-semibold text-on-surface">Matías Rossi</div>
+                          <div class="text-body-sm text-on-surface-variant">matias.rossi@yahoo.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4 font-medium text-body-sm tabular-nums">
+                      <div class="flex items-center gap-1.5 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-body-sm text-success">chat</span>
+                        <span>+54 9 11 8877-2211</span>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4 font-bold tabular-nums">8 visitas</td>
+                    <td class="py-4 px-4 text-body-sm text-on-surface-variant">Hoy 10:30</td>
+                    <td class="py-4 px-4">
+                      <span class="inline-flex items-center text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface font-medium">
+                        Barba Spa Navaja
+                      </span>
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <button type="button" class="text-label-md text-primary font-semibold hover:underline">Abrir</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3 -->
+                  <tr class="hover:bg-surface-container-low/60 transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-brand-roble text-white font-display font-semibold flex items-center justify-center text-label-md shrink-0 border border-outline">
+                          VP
+                        </div>
+                        <div>
+                          <div class="font-semibold text-on-surface flex items-center gap-1.5">
+                            <span>Valentina Paz</span>
+                            <span class="text-[10px] font-semibold bg-surface-container text-primary px-1.5 py-0.5 rounded">Nueva</span>
+                          </div>
+                          <div class="text-body-sm text-on-surface-variant">valen.paz@outlook.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4 font-medium text-body-sm tabular-nums">
+                      <div class="flex items-center gap-1.5 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-body-sm text-success">chat</span>
+                        <span>+54 9 11 3344-9900</span>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4 font-bold tabular-nums">1 visita</td>
+                    <td class="py-4 px-4 text-body-sm text-warning font-medium">Hoy 11:15 (Pend.)</td>
+                    <td class="py-4 px-4">
+                      <span class="inline-flex items-center text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface font-medium">
+                        Lifting &amp; Cejas HD
+                      </span>
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <button type="button" class="text-label-md text-primary font-semibold hover:underline">Abrir</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4 -->
+                  <tr class="hover:bg-surface-container-low/60 transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface font-display font-semibold flex items-center justify-center text-label-md shrink-0 border border-outline">
+                          EM
+                        </div>
+                        <div>
+                          <div class="font-semibold text-on-surface">Esteban Morales</div>
+                          <div class="text-body-sm text-on-surface-variant">esteban.m@empresa.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4 font-medium text-body-sm tabular-nums">
+                      <div class="flex items-center gap-1.5 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-body-sm text-success">chat</span>
+                        <span>+54 9 11 6543-2109</span>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4 font-bold tabular-nums">22 visitas</td>
+                    <td class="py-4 px-4 text-body-sm text-on-surface-variant">Hoy 14:00</td>
+                    <td class="py-4 px-4">
+                      <span class="inline-flex items-center text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface font-medium">
+                        Corte Degradé
+                      </span>
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <button type="button" class="text-label-md text-primary font-semibold hover:underline">Abrir</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="p-4 border-t border-outline-variant bg-surface-container-low flex items-center justify-between text-body-sm text-on-surface-variant">
+              <span>Mostrando 4 clientes activos con citas programadas hoy.</span>
+              <div class="flex items-center gap-2">
+                <button type="button" class="px-2.5 py-1 border border-outline rounded bg-surface text-label-sm font-medium hover:bg-surface-container">Anterior</button>
+                <button type="button" class="px-2.5 py-1 border border-outline rounded bg-surface text-label-sm font-medium hover:bg-surface-container">Siguiente</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Col: Selected Client Profile Dossier -->
+          <div class="flex flex-col gap-6">
+            <!-- Client Detailed Card -->
+            <section class="bg-surface rounded-lg border border-outline-variant p-6 shadow-sm flex flex-col gap-5">
+              <div class="flex items-start justify-between border-b border-outline-variant pb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-14 h-14 rounded-full bg-primary text-white font-display font-semibold flex items-center justify-center text-headline-lg shadow-sm">
+                    LF
+                  </div>
+                  <div>
+                    <h3 class="font-display text-headline-lg font-semibold text-on-surface" data-design-text-token="headline-lg">Luciana Ferrero</h3>
+                    <p class="font-body text-body-sm text-on-surface-variant" data-design-text-token="body-sm">Cliente frecuente • Desde Marzo 2024</p>
+                  </div>
+                </div>
+                <button type="button" class="text-primary hover:text-secondary p-1" aria-label="Editar datos">
+                  <span class="material-symbols-outlined text-title-lg">edit</span>
+                </button>
+              </div>
+
+              <!-- WhatsApp Quick Action -->
+              <a href="https://wa.me/5491145218899?text=Hola%20Luciana,%20te%20escribimos%20de%20Studio%20Bellas..." target="_blank" class="w-full py-2.5 px-4 bg-success-container text-on-success-container rounded-md font-label text-label-md font-semibold flex items-center justify-center gap-2 hover:opacity-95 transition-all">
+                <span class="material-symbols-outlined text-title-md">chat</span>
+                Abrir conversación de WhatsApp
+              </a>
+
+              <!-- Historical Stats -->
+              <div class="grid grid-cols-2 gap-3 py-2 border-y border-outline-variant text-body-sm">
+                <div>
+                  <span class="text-on-surface-variant block text-label-sm">Inversión acumulada</span>
+                  <span class="font-bold text-on-surface tabular-nums text-title-md">$308.000</span>
+                </div>
+                <div>
+                  <span class="text-on-surface-variant block text-label-sm">Promedio asistencia</span>
+                  <span class="font-bold text-success tabular-nums text-title-md">100% puntual</span>
+                </div>
+              </div>
+
+              <!-- Real Human Notes from the Specialists -->
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-label text-label-sm font-semibold text-on-surface flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-body-sm text-primary">sticky_note_2</span>
+                    Notas del Equipo (Confidencial)
+                  </span>
+                  <button type="button" class="text-label-sm text-primary font-semibold hover:underline">+ Añadir</button>
+                </div>
+
+                <div class="bg-surface-container-low p-3.5 rounded-md border border-outline-variant text-body-sm flex flex-col gap-2">
+                  <div class="flex items-center justify-between text-[11px] text-on-surface-variant border-b border-outline-variant/60 pb-1">
+                    <span class="font-semibold text-on-surface">Sofía M. (Estilista)</span>
+                    <span>12 Oct 2026</span>
+                  </div>
+                  <p class="text-on-surface text-body-sm leading-relaxed">
+                    &#34;Prefiere café con leche deslactosada y agua tibia. Sensibilidad leve a tinturas amoniacales en cuero cabelludo. Siempre usa toalla fría al terminar nutrición.&#34;
+                  </p>
+                </div>
+
+                <div class="bg-surface-container-low p-3.5 rounded-md border border-outline-variant text-body-sm flex flex-col gap-2">
+                  <div class="flex items-center justify-between text-[11px] text-on-surface-variant border-b border-outline-variant/60 pb-1">
+                    <span class="font-semibold text-on-surface">Recepción</span>
+                    <span>15 Ago 2026</span>
+                  </div>
+                  <p class="text-on-surface text-body-sm leading-relaxed">
+                    &#34;Pide turno siempre martes a primera hora por compromisos laborales. No enviar promociones fines de semana.&#34;
+                  </p>
+                </div>
+              </div>
+
+              <!-- Quick Schedule Next Session -->
+              <button type="button" class="w-full py-2.5 bg-primary text-white rounded-md font-label text-label-md font-semibold hover:opacity-95 transition-all shadow-xs mt-1">
+                Agendar próxima sesión para Luciana
+              </button>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+</body></html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva de Cita — Studio Bellas</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="25f44ef5a1ddaf5f===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#442299',
+        'on-primary': '#FFFFFF',
+        'primary-container': '#EFEBFF',
+        'on-primary-container': '#2B106B',
+        'secondary': '#6A55B2',
+        'on-secondary': '#FFFFFF',
+        'secondary-container': '#F5F2FC',
+        'on-secondary-container': '#2B106B',
+        'accent': '#C59B27',
+        'brand-roble': '#13101C',
+        'background': '#F7F6FA',
+        'on-background': '#181721',
+        'surface': '#FFFFFF',
+        'on-surface': '#181721',
+        'surface-variant': '#EFECEF',
+        'on-surface-variant': '#524E5E',
+        'surface-container-low': '#FCFBFE',
+        'surface-container': '#F2EFF7',
+        'surface-container-high': '#EAE5F2',
+        'outline': '#D2CDDC',
+        'outline-variant': '#E2DEEB',
+        'success': '#0D6E3F',
+        'on-success': '#FFFFFF',
+        'success-container': '#D4F4E2',
+        'on-success-container': '#064324',
+        'error': '#B32626',
+        'on-error': '#FFFFFF',
+        'error-container': '#FDE8E8',
+        'on-error-container': '#681212',
+        'warning': '#965306',
+        'on-warning': '#FFFFFF',
+        'warning-container': '#FEF0D6',
+        'on-warning-container': '#5B3002',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '18px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '28px',
+      },
+      fontFamily: {
+        'display': ['"Cormorant Garamond"', 'sans-serif'],
+        'headline': ['"Cormorant Garamond"', 'sans-serif'],
+        'title': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'body': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'label': ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['42px', { lineHeight: '48px', letterSpacing: '-0.5px', fontWeight: '600' }],
+        'display-lg-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.3px', fontWeight: '600' }],
+        'headline-xl': ['34px', { lineHeight: '40px', letterSpacing: '-0.4px', fontWeight: '600' }],
+        'headline-xl-mobile': ['26px', { lineHeight: '32px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'headline-lg': ['26px', { lineHeight: '32px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'headline-lg-mobile': ['22px', { lineHeight: '28px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'headline-md': ['18px', { lineHeight: '24px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'title-lg': ['16px', { lineHeight: '22px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'title-md': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['13px', { lineHeight: '18px', letterSpacing: '0.3px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.2px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '160ms',
+        'surface-enter': '260ms',
+        'surface-exit': '160ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-enter': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'surface-exit': 'cubic-bezier(0.4, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1 !important;
+      box-sizing: content-box;
+      overflow: hidden;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen pb-16">
+  <div class="max-w-md mx-auto bg-surface min-h-screen shadow-xl border-x border-outline-variant flex flex-col justify-between">
+    <div>
+      <!-- Elegant Atelier Header & Identity -->
+      <header class="bg-brand-roble text-white p-6 pb-7 relative overflow-hidden">
+        <div class="relative z-10 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <span class="font-label text-[11px] uppercase tracking-widest text-outline-variant font-semibold flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
+              Atelier &amp; Spa • TurnosApp
+            </span>
+            <span class="text-label-sm font-semibold text-white/90 bg-white/10 px-2.5 py-0.5 rounded-full">
+              Turnos abiertos
+            </span>
+          </div>
+
+          <div>
+            <h1 class="font-display text-display-lg italic text-white leading-tight font-medium" data-design-text-token="display-lg">
+              Studio Bellas
+            </h1>
+            <p class="font-body text-body-sm text-outline mt-1 flex items-center gap-1.5" data-design-text-token="body-sm">
+              <span class="material-symbols-outlined text-body-sm text-white">location_on</span>
+              Av. Corrientes 1420, CABA • Experiencia Privada
+            </p>
+          </div>
+        </div>
+
+        <!-- Progress Steps Minimal Line -->
+        <div class="flex items-center justify-between mt-6 pt-5 border-t border-outline-variant/30 relative z-10">
+          <div class="flex items-center gap-1.5 font-label text-label-sm">
+            <span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center font-bold text-[10px]">1</span>
+            <span class="text-white font-medium">Servicio</span>
+          </div>
+          <div class="w-8 h-px bg-primary"></div>
+          <div class="flex items-center gap-1.5 font-label text-label-sm">
+            <span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center font-bold text-[10px]">2</span>
+            <span class="text-white font-medium">Horario</span>
+          </div>
+          <div class="w-8 h-px bg-outline/40"></div>
+          <div class="flex items-center gap-1.5 text-outline font-label text-label-sm">
+            <span class="w-5 h-5 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-bold text-[10px]">3</span>
+            <span>Confirmación</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Booking Steps -->
+      <main class="p-6 flex flex-col gap-7">
+        <!-- Paso 1: Selección de Servicio -->
+        <section class="flex flex-col gap-3.5">
+          <div class="flex items-center justify-between border-b border-outline-variant pb-2">
+            <h2 class="font-display text-headline-xl text-on-surface font-semibold" data-design-text-token="headline-xl">1. Selecciona tu tratamiento</h2>
+            <span class="font-label text-label-sm text-on-surface-variant font-medium">1 de 3</span>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <!-- Servicio 1: Seleccionado -->
+            <label class="p-4 rounded-lg border-2 border-primary bg-primary-container/20 flex items-center justify-between cursor-pointer transition-all duration-state-change shadow-xs">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="service" checked class="text-primary focus:ring-primary h-4 w-4">
+                <div>
+                  <h3 class="font-body text-title-md text-on-surface font-semibold" data-design-text-token="title-md">Corte de Autor &amp; Nutrición Capilar</h3>
+                  <p class="font-body text-body-sm text-on-surface-variant mt-0.5" data-design-text-token="body-sm">Lavado aromaterapéutico, masaje capilar y peinado modelado.</p>
+                  <div class="flex items-center gap-3 mt-2 text-label-sm text-on-surface-variant">
+                    <span class="flex items-center gap-1 font-semibold text-primary">
+                      <span class="material-symbols-outlined text-body-sm">schedule</span> 45 minutos
+                    </span>
+                    <span>•</span>
+                    <span class="text-primary font-medium">Atención personalizada</span>
+                  </div>
+                </div>
+              </div>
+              <span class="font-body text-title-md font-bold text-primary tabular-nums shrink-0 ml-2">$18.500</span>
+            </label>
+
+            <!-- Servicio 2 -->
+            <label class="p-4 rounded-lg border border-outline-variant bg-surface hover:border-primary/50 flex items-center justify-between cursor-pointer transition-all duration-state-change">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="service" class="text-primary focus:ring-primary h-4 w-4">
+                <div>
+                  <h3 class="font-body text-title-md text-on-surface font-semibold" data-design-text-token="title-md">Lifting de Pestañas + Queratina</h3>
+                  <p class="font-body text-body-sm text-on-surface-variant mt-0.5" data-design-text-token="body-sm">Curvatura orgánica de efecto rímel y baño nutritivo.</p>
+                  <div class="flex items-center gap-3 mt-2 text-label-sm text-on-surface-variant">
+                    <span class="flex items-center gap-1 font-medium text-on-surface-variant">
+                      <span class="material-symbols-outlined text-body-sm">schedule</span> 60 minutos
+                    </span>
+                    <span>•</span>
+                    <span>Especialista: Ana Romero</span>
+                  </div>
+                </div>
+              </div>
+              <span class="font-body text-title-md font-bold text-on-surface tabular-nums shrink-0 ml-2">$24.000</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- Paso 2: Selección de Especialista -->
+        <section class="flex flex-col gap-3.5">
+          <div class="flex items-center justify-between border-b border-outline-variant pb-2">
+            <h2 class="font-display text-headline-xl text-on-surface font-semibold" data-design-text-token="headline-xl">2. Tu Especialista</h2>
+            <span class="text-label-sm text-primary font-medium">Atención experta</span>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-2.5">
+            <!-- Cualquiera -->
+            <div class="flex flex-col items-center p-3 rounded-lg border-2 border-primary bg-primary-container/20 cursor-pointer text-center">
+              <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold mb-1.5 shadow-xs">
+                <span class="material-symbols-outlined text-title-lg text-white">auto_awesome</span>
+              </div>
+              <span class="font-body text-label-sm text-on-surface font-semibold" data-design-text-token="label-sm">Primer turno</span>
+              <span class="text-body-sm text-primary text-[10px] font-medium">Más rápido</span>
+            </div>
+
+            <!-- Profesional 1 -->
+            <div class="flex flex-col items-center p-3 rounded-lg border border-outline-variant bg-surface hover:border-primary/50 cursor-pointer text-center">
+              <div class="w-10 h-10 rounded-full bg-surface-container text-on-surface font-display font-bold flex items-center justify-center mb-1.5 text-label-md border border-outline-variant">
+                SM
+              </div>
+              <span class="font-body text-label-sm text-on-surface font-semibold" data-design-text-token="label-sm">Sofía M.</span>
+              <span class="text-body-sm text-on-surface-variant text-[10px]">Estilista Senior</span>
+            </div>
+
+            <!-- Profesional 2 -->
+            <div class="flex flex-col items-center p-3 rounded-lg border border-outline-variant bg-surface hover:border-primary/50 cursor-pointer text-center">
+              <div class="w-10 h-10 rounded-full bg-surface-container text-on-surface font-display font-bold flex items-center justify-center mb-1.5 text-label-md border border-outline-variant">
+                MC
+              </div>
+              <span class="font-body text-label-sm text-on-surface font-semibold" data-design-text-token="label-sm">Martín C.</span>
+              <span class="text-body-sm text-on-surface-variant text-[10px]">Barbero Master</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Paso 3: Selección de Fecha y Franja Horaria -->
+        <section class="flex flex-col gap-3.5">
+          <div class="flex items-center justify-between border-b border-outline-variant pb-2">
+            <h2 class="font-display text-headline-xl text-on-surface font-semibold" data-design-text-token="headline-xl">3. Fecha &amp; Horario</h2>
+            <span class="font-label text-label-sm text-primary font-semibold">Noviembre 2026</span>
+          </div>
+
+          <!-- Selector de días en carrusel horizontal -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-1">
+            <div class="flex flex-col items-center justify-center min-w-[56px] py-2.5 rounded-lg border-2 border-primary bg-primary text-white cursor-pointer shadow-sm">
+              <span class="text-label-sm uppercase font-semibold text-white">Hoy</span>
+              <span class="font-display text-headline-lg font-bold tabular-nums text-white">17</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[56px] py-2.5 rounded-lg border border-outline-variant bg-surface hover:border-primary cursor-pointer">
+              <span class="text-label-sm uppercase text-on-surface-variant font-medium">Mié</span>
+              <span class="font-display text-headline-lg font-bold text-on-surface tabular-nums">18</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[56px] py-2.5 rounded-lg border border-outline-variant bg-surface hover:border-primary cursor-pointer">
+              <span class="text-label-sm uppercase text-on-surface-variant font-medium">Jue</span>
+              <span class="font-display text-headline-lg font-bold text-on-surface tabular-nums">19</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[56px] py-2.5 rounded-lg border border-outline-variant bg-surface hover:border-primary cursor-pointer">
+              <span class="text-label-sm uppercase text-on-surface-variant font-medium">Vie</span>
+              <span class="font-display text-headline-lg font-bold text-on-surface tabular-nums">20</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[56px] py-2.5 rounded-lg border border-outline-variant bg-surface hover:border-primary cursor-pointer">
+              <span class="text-label-sm uppercase text-on-surface-variant font-medium">Sáb</span>
+              <span class="font-display text-headline-lg font-bold text-on-surface tabular-nums">21</span>
+            </div>
+          </div>
+
+          <!-- Slots de Horarios Libres Disponibles -->
+          <div class="mt-2 bg-surface p-4 rounded-lg border border-outline-variant">
+            <p class="font-label text-label-sm text-on-surface-variant mb-2.5 font-medium">Sesiones vespertinas disponibles:</p>
+            <div class="grid grid-cols-3 gap-2.5">
+              <button type="button" class="py-2.5 rounded-md border border-outline-variant bg-surface text-on-surface font-label text-label-md tabular-nums hover:border-primary">
+                14:00
+              </button>
+              <button type="button" class="py-2.5 rounded-md border-2 border-primary bg-primary text-white font-label text-label-md font-bold tabular-nums shadow-sm">
+                15:00
+              </button>
+              <button type="button" class="py-2.5 rounded-md border border-outline-variant bg-surface text-on-surface font-label text-label-md tabular-nums hover:border-primary">
+                16:30
+              </button>
+              <button type="button" class="py-2.5 rounded-md border border-outline-variant bg-surface text-on-surface font-label text-label-md tabular-nums hover:border-primary">
+                17:15
+              </button>
+              <button type="button" class="py-2.5 rounded-md border border-outline-variant bg-surface text-on-surface font-label text-label-md tabular-nums hover:border-primary">
+                18:00
+              </button>
+              <button type="button" class="py-2.5 rounded-md border border-outline-variant bg-surface text-on-surface font-label text-label-md tabular-nums hover:border-primary">
+                19:00
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Datos del Cliente para Confirmación -->
+        <section class="flex flex-col gap-3.5 pt-4 border-t border-outline-variant">
+          <div class="flex items-center justify-between border-b border-outline-variant pb-2">
+            <h2 class="font-display text-headline-xl text-on-surface font-semibold" data-design-text-token="headline-xl">4. Tus Datos</h2>
+            <span class="text-label-sm text-on-surface-variant">Confidencial</span>
+          </div>
+          
+          <div class="flex flex-col gap-3">
+            <div>
+              <label class="font-label text-label-sm text-on-surface block mb-1">Nombre completo *</label>
+              <input type="text" placeholder="Ej: Laura Benítez" value="Laura Benítez" class="w-full px-3.5 py-2.5 bg-surface border border-outline rounded-md text-on-surface text-body-md focus:border-primary focus:ring-1 focus:ring-primary">
+            </div>
+
+            <div>
+              <label class="font-label text-label-sm text-on-surface block mb-1">WhatsApp para confirmación *</label>
+              <div class="relative flex items-center">
+                <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-body-md">phone</span>
+                <input type="tel" placeholder="+54 9 11 ..." value="+54 9 11 6543-2109" class="w-full pl-10 pr-3.5 py-2.5 bg-surface border border-outline rounded-md text-on-surface text-body-md focus:border-primary focus:ring-1 focus:ring-primary">
+              </div>
+              <span class="font-body text-body-sm text-on-surface-variant mt-1 block">Te enviaremos los detalles y recordatorio directo a tu WhatsApp.</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Sticky Bottom Concierge Action Bar -->
+    <div class="p-5 bg-surface border-t border-outline-variant sticky bottom-0 shadow-2xl flex flex-col gap-2.5">
+      <div class="flex items-center justify-between text-body-sm">
+        <span class="text-on-surface-variant">Inversión del servicio:</span>
+        <span class="font-body text-title-lg font-bold text-primary tabular-nums">$18.500</span>
+      </div>
+      <button type="button" class="w-full py-3.5 bg-primary text-on-primary rounded-md font-label text-label-lg font-semibold shadow-sm hover:opacity-95 active:scale-95 transition-all duration-state-change flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-title-lg text-white">check_circle</span>
+        <span data-design-text-token="label-lg">Confirmar Cita (Hoy 15:00 hs)</span>
+      </button>
+      <p class="text-center text-[11px] text-on-surface-variant">
+        Política de cancelación flexible hasta 4h antes • Desarrollado por <span class="font-semibold text-on-surface">TurnosApp</span>
+      </p>
+    </div>
+  </div>
+
+
+</body></html>
